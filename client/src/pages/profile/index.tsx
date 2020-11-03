@@ -311,8 +311,10 @@ export class ProfilePage extends React.Component<Props, State> {
   };
 
   async componentDidMount() {
-    await this.fetchData();
-    await this.authorizeDiscord();
+    setTimeout(async () => {
+      await this.fetchData();
+      await this.authorizeDiscord();
+    }, 200);
   }
 
   render() {
